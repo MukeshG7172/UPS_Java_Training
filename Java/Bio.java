@@ -1,10 +1,12 @@
 import java.util.Scanner;
+
 class b{
     char section;
     b(){
         section = 'D';
     }
 }
+
 class a{
     public static void main(String args[]){
         boolean attendance = true;
