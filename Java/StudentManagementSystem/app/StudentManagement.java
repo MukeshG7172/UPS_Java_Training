@@ -13,7 +13,7 @@ public class StudentManagement {
     boolean running = true;
 
     while (running) {
-      System.out.println("\n========== STUDENT MANAGEMENT SYSTEM ==========");
+      System.out.println("\nSTUDENT MANAGEMENT SYSTEM");
       System.out.println("1. Add Student");
       System.out.println("2. View All Students");
       System.out.println("3. Search Student by ID");
