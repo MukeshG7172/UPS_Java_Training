@@ -1,12 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.StudentDTO;
 import com.example.demo.entity.StudentEntity;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,12 +20,25 @@ public class StudentController {
     }
 
     @PostMapping("/student")
-    public StudentEntity user(@RequestBody StudentEntity s){
+    public StudentDTO user(@RequestBody StudentEntity s){
         return studentService.addStudent(s);
     }
 
-    @GetMapping("/student")
-    public List<StudentEntity> getStudents(){
+    @GetMapping("/students")
+    public List<StudentDTO> getStudents(){
         return studentService.getStudents();
+    }
+
+    @PutMapping("/student/{id}")
+    public StudentDTO updateStudents(
+            @PathVariable Long id,
+            @RequestBody StudentEntity s) {
+
+        return studentService.updateStudent(id, s);
+    }
+
+    @DeleteMapping("/student/{id}")
+    public void deleteTeacher(@PathVariable Long id) {
+        studentService.deleteStudent(id);
     }
 }

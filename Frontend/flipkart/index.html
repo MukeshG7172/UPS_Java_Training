@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .logo img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+      }
+
+      .nav a:hover {
+        color: blue;
+      }
+
+      .banner {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .banner img {
+        height: 150px;
+        width: 70%;
+        border-radius: 10px;
+      }
+
+      .search {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+      }
+
+      .search input {
+        width: 300px;
+        height: 30px;
+        padding: 5px;
+      }
+
+      .search button {
+        height: 30px;
+        padding: 0 15px;
+        background-color: #2874f0;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .products {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 33px;
+      }
+
+      .card {
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .card img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+      }
+
+      .card h3 {
+        font-size: 16px;
+      }
+
+      .card p {
+        color: green;
+        font-weight: bold;
+      }
+
+      .card button {
+        background-color: #2874f0;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        cursor: pointer;
+      }
+
+      .footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      .footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .footer a:hover {
+        color: lightblue;
+      }
+
+      .footer p {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-9aSFI510oEHhfLEUXP3P3Xdr_049owL9u92NGQImEA&s=10" alt="Logo">
+      </div>
+
+      <div class="nav">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Login</a>
+      </div>
+    </div>
+
+    <div class="banner">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRfXuKjEZVEBUzaLdvG-ItA8kXKawVCkC5x8mQll1EDsTs33keC_8WcH4&s=10" alt="Banner">
+    </div>
+
+    <div class="search">
+      <input type="search" placeholder="Search for products...">
+      <button>Search</button>
+    </div>
+
+    <div class="products">
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkJNAIwv_R0PUrR9CkNFw521uXEKOHrnGvMWUE0DKb8g&s" alt="Phone">
+        <h3>Smartphone</h3>
+        <p>₹15,999</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMYL0u5nxxgvqBEBlhnYzNWkAcl_62_th2yGuhYJvg9w&s=10" alt="Laptop">
+        <h3>Laptop</h3>
+        <p>₹45,999</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnuUdCijgjKUrEFz-D1ofr7DCJRYHmuCfoeIeccmAXrA&s=10" alt="Headphones">
+        <h3>Headphones</h3>
+        <p>₹1,499</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRL5SHmy4Fovdc-MkuIKnSY8Rm5JXROBsiimyt_ntPcg&s=10" alt="Watch">
+        <h3>Smart Watch</h3>
+        <p>₹2,999</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfeqWcCEqX2RENdmPJZUDwALqvTfCvlsutTl2VxZrEGw&s=10" alt="Mouse">
+        <h3>Mouse</h3>
+        <p>₹999</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh4e6AQ2vh8Q_b3QjEQUhiu0rFQRuvwXmEPrUorVDVpg&s=10" alt="Keyboard">
+        <h3>Keyboard</h3>
+        <p>₹1,999</p>
+        <button>Buy Now</button>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <div>
+        <a href="">About Us</a>
+        <a href="">Contact</a>
+        <a href="">Privacy Policy</a>
+        <a href="">Terms & Conditions</a>
+      </div>
+
+      <p>© 2026 Flipkart. All Rights Reserved.</p>
+    </div>
+
+  </body>
+</html>

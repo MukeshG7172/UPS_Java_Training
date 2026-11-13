@@ -1,0 +1,18 @@
+#d1, #d4{
+    width: auto;
+    height: 150px;
+}
+
+#d1{
+   background-color: rgb(239, 133, 57); 
+}
+#d2{
+    display: flex;
+}
+#d3{
+    width: 600px;
+    height: 150px;
+}
+#d4{
+    background-color: chocolate; 
+}
