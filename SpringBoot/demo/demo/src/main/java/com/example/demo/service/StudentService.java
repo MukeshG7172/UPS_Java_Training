@@ -1,18 +1,17 @@
 package com.example.demo.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.example.demo.dto.StudentDTO;
 import com.example.demo.entity.StudentEntity;
 import com.example.demo.entity.TeacherEntity;
 import com.example.demo.mapstruct.StudentMapper;
 import com.example.demo.repository.StudentRepository;
 import com.example.demo.repository.TeacherRepository;
-
-import org.jspecify.annotations.NonNull;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
