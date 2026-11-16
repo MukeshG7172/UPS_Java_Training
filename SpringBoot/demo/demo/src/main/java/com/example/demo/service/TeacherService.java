@@ -33,6 +33,7 @@ public class TeacherService {
         t.setName(updatedTeacher.getName());
         t.setSubject(updatedTeacher.getSubject());
         t.setSalary(updatedTeacher.getSalary());
+        t.setStudents(updatedTeacher.getStudents());
 
         TeacherEntity teacher = repo.save(t);
         return maps.toDTO(teacher);

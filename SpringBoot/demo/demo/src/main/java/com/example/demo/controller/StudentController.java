@@ -19,9 +19,9 @@ public class StudentController {
         return "Welcome Mukesh!";
     }
 
-    @PostMapping("/student")
-    public StudentDTO user(@RequestBody StudentEntity s){
-        return studentService.addStudent(s);
+    @PostMapping("/student/{id}")
+    public StudentDTO user(@PathVariable Long id, @RequestBody StudentEntity s){
+        return studentService.addStudent(id, s);
     }
 
     @GetMapping("/students")

@@ -1,8 +1,13 @@
+
 package com.example.demo.dto;
 
+import java.util.List;
+
 public class TeacherDTO {
+
     private Long id;
     private String name;
+    private List<StudentDTO> students;
 
     public Long getId() {
         return id;
@@ -18,5 +23,13 @@ public class TeacherDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<StudentDTO> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StudentDTO> students) {
+        this.students = students;
     }
 }

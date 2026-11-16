@@ -1,9 +1,14 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +20,10 @@ public class TeacherEntity {
     private String name;
     private String subject;
     private double salary;
+
+    @JsonIgnore 
+    @OneToMany(mappedBy = "teacher")
+    private List<StudentEntity> students;
 
     public TeacherEntity() {
     }
@@ -57,5 +66,12 @@ public class TeacherEntity {
     public void setSalary(double salary) {
         this.salary = salary;
     }
-}
 
+    public List<StudentEntity> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StudentEntity> students) {
+        this.students = students;
+    }
+}
