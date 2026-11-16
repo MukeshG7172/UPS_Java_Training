@@ -1,23 +1,44 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.TeacherDTO;
 import com.example.demo.entity.TeacherEntity;
+import com.example.demo.mapstruct.TeacherMapper;
 import com.example.demo.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TeacherService {
+    @Autowired
+    TeacherMapper maps;
 
     @Autowired
     TeacherRepository repo;
 
-    public TeacherEntity addTeacher(TeacherEntity t){
-        return repo.save(t);
+    public TeacherDTO addTeacher(TeacherEntity t){
+        TeacherEntity teacher = repo.save(t);
+        return maps.toDTO(teacher);
     }
 
-    public List<TeacherEntity> getTeachers(){
-        return repo.findAll();
+    public List<TeacherDTO> getTeachers(){
+        return repo.findAll().stream().map(maps::toDTO).collect(Collectors.toList());
+    }
+
+    public TeacherDTO updateTeacher(Long id, TeacherEntity updatedTeacher) {
+        TeacherEntity t = repo.findById(id).orElseThrow(() -> new RuntimeException("Teacher not Found!"));
+
+        t.setName(updatedTeacher.getName());
+        t.setSubject(updatedTeacher.getSubject());
+        t.setSalary(updatedTeacher.getSalary());
+
+        TeacherEntity teacher = repo.save(t);
+        return maps.toDTO(teacher);
+    }
+
+    public void deleteTeacher(Long id) {
+        repo.deleteById(id);
     }
 }
