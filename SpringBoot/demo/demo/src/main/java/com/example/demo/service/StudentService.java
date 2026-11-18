@@ -31,6 +31,11 @@ public class StudentService {
         return maps.toDTO(st);
     }
 
+    public StudentDTO getStudentByAge(int age){
+        StudentEntity st = repo.filterByAge(age);
+        return maps.toDTO(st);
+    }
+
     public List<StudentDTO> getStudents(){
         return repo.findAll().stream().map(maps::toDTO).collect(Collectors.toList());
     }

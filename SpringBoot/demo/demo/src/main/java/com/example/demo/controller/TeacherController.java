@@ -4,18 +4,22 @@ import com.example.demo.dto.TeacherDTO;
 import com.example.demo.entity.StudentEntity;
 import com.example.demo.entity.TeacherEntity;
 import com.example.demo.service.TeacherService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@Tag(name = "TeacherCtl", description = "All teacher APIs")
 public class TeacherController {
 
     @Autowired
     private TeacherService teacherService;
 
     @PostMapping("/teacher")
+    @Operation(summary = "Get all Teachers")
     public TeacherDTO addTeacher(@RequestBody TeacherEntity t){
         return teacherService.addTeacher(t);
     }

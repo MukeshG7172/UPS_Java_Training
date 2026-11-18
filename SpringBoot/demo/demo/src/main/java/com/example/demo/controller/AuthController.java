@@ -5,6 +5,7 @@ import com.example.demo.entity.UserEntity;
 import com.example.demo.service.AuthService;
 import com.example.demo.service.UserService;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,17 +26,17 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping("/register")
-    public UserDTO registerUser(@RequestBody UserEntity user) {
+    public UserDTO registerUser(@Valid @RequestBody UserEntity user) {
         return authService.registerUser(user);
     }
 
     @PostMapping("/login")
-    public UserDTO loginUser(@RequestBody UserEntity user) {
+    public UserDTO loginUser(@Valid @RequestBody UserEntity user) {
         return authService.loginUser(user);
     }
 
     @GetMapping("/check-user/{username}")
-    public Map<String, Object> checkUserExists(@PathVariable String username) {
+    public Map<String, Object> checkUserExists(@Valid @PathVariable String username) {
         boolean exists = authService.checkUserExists(username);
         Map<String, Object> response = new HashMap<>();
         response.put("username", username);

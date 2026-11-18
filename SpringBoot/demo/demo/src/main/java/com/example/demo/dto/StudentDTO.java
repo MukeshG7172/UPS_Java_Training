@@ -7,6 +7,7 @@ public class StudentDTO {
 
     private Long id;
     private String name;
+    private int age;
     private Long teacherId;
     private List<AttendanceDTO> attendanceRecords;
 
@@ -20,6 +21,14 @@ public class StudentDTO {
 
     public String getName() {
         return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public void setName(String name) {

@@ -1,6 +1,9 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -10,12 +13,17 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Column(nullable = false, unique = true)
     private String username;
 
+    @NotNull
     @Column(nullable = false)
+    @Size(min = 6, message = "Password should be atleast of length 6")
     private String password;
 
+    @Email
+    @NotNull(message = "Email should not be empty")
     private String email;
 
     public UserEntity() {
@@ -23,12 +31,6 @@ public class UserEntity {
 
     public UserEntity(Long id, String username, String password, String email) {
         this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-    }
-
-    public UserEntity(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;

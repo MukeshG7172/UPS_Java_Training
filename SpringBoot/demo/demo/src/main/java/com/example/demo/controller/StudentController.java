@@ -3,10 +3,12 @@ package com.example.demo.controller;
 import com.example.demo.service.StudentService;
 import com.example.demo.dto.StudentDTO;
 import com.example.demo.entity.StudentEntity;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 
 @RestController
 public class StudentController {
@@ -27,6 +29,11 @@ public class StudentController {
     @GetMapping("/students")
     public List<StudentDTO> getStudents(){
         return studentService.getStudents();
+    }
+
+    @GetMapping("/student/age/{age}")
+    public StudentDTO getStudentsByAge(@PathVariable int age){
+        return studentService.getStudentByAge(age);
     }
 
     @PutMapping("/student/{id}")
